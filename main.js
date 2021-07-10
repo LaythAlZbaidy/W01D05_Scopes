@@ -65,6 +65,7 @@ return counter ;
 const  count_1 = createCounter();
 const  count_2 = createCounter();
 
+
 //invoking//
 
 //=======================================================================
@@ -294,18 +295,18 @@ Q7:
 Write a function createToDoList that works similarly to addToList function but instead of a global variable use a closure variable.
 */
 
- let temp = ' '
 const createToDoList = function ()
 {
+  let temp = ' '
 
-return function(a)
+  return function(a)
 
-{
-  temp = temp +" "+a
-
-  return temp
-
-}
+  {
+    temp = temp +" "+a
+  
+    return temp
+  
+  }
 };
 const toDoListOne = createToDoList();
 
@@ -383,37 +384,31 @@ transactionType and amount that deposit or withdraw from the account balance dep
 
 ***I don't know the solution after many attempts***
 
-*/
-start_n = 0
+*///start_n = 0
 const createAccount = function (initialValue)
 
 {
 
+let start_n = initialValue
 
-start_n=initialValue;
+console.log(initialValue) 
+return function (transactionType,amount)
+{
+if ((transactionType == "withdraw") && amount <=start_n)
+{
+
+start_n =start_n -amount
+return start_n
+}
+else if (transactionType =="deposit"&& amount>=0)
+{
   
-return function (transactionType,amount )
-
-{
-
-if ((transactionType == "withdraw") && amount >=0)
-{
-
-return withdraw();
-}
-else if ((transactionType =="deposit" )&& amount >=0)
-
-{
-
-return deposit
-
+return start_n =start_n +amount
 
 }
-
 else 
 {
-
-return "insufficient funds, current balance: "+amount
+return "insufficient funds, current balance: "+amount 
 
 }
 
@@ -424,6 +419,43 @@ return "insufficient funds, current balance: "+amount
 const accountOne = createAccount(0)
 const accountTwo = createAccount(500)
 
+
+
+/*
+
+const createAccount = function (initialValue)
+
+{
+
+balance_acount = initialValue
+
+ console.log(initialValue) 
+return function (transactionType,amount )
+{
+if ((transactionType == "withdraw") && amount <=balance_acount)
+{
+
+
+return withdraw(amount)
+}
+else if (transactionType =="deposit"&& amount>=0)
+{
+  
+return deposit(amount)
+}
+else 
+{
+return "insufficient funds, current balance: "+amount 
+
+}
+
+}
+
+}
+
+const accountOne = createAccount(0)
+//const accountTwo = createAccount(500)
+*/
 
 /*
 const accountOne = createAccount(0);
