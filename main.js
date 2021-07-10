@@ -271,7 +271,7 @@ const addToList = function (toDo)
 
 { 
 
-list = list + " " + toDo;
+list = list + " " + toDo ;
 return list 
 
 };
@@ -292,24 +292,20 @@ addToList("repeat"); // => 'Eat Play Sleep repeat'
 /*
 Q7:
 Write a function createToDoList that works similarly to addToList function but instead of a global variable use a closure variable.
- ***I don't know the solution after many attempts***
 */
-temp = ""
+
+ let temp = ' '
 const createToDoList = function ()
 {
 
-
-
-return function()
+return function(a)
 
 {
+  temp = temp +" "+a
 
-  temp
-return
+  return temp
 
 }
-
-
 };
 const toDoListOne = createToDoList();
 
