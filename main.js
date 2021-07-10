@@ -65,7 +65,7 @@ return counter ;
 const  count_1 = createCounter();
 const  count_2 = createCounter();
 
-//invoking
+//invoking//
 
 //=======================================================================
 
